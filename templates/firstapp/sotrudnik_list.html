@@ -13,22 +13,23 @@
 </head>
 <body>
 <div class="d-flex flex-column">
-    {{% for sotrudnik in all_sotrudnik %}
-    <div class="card d-flex bg-light flex-column mt-3 align-self-center" style="width: 20%">
-    <div class="d-flex flex-column">
-        <p class="text-dark">Фамилия: {{ sotrudnik.name_f }}</p>
-        <p class="text-dark">Имя: {{ sotrudnik.name_i }}</p>
-        <p class="text-dark">Отчество: {{ sotrudnik.name_o }}</p>
-        <p class="text-dark">Дата рождения: {{ sotrudnik.birth_date | date:'d.m.Y' }}</p>
-        <p class="text-dark">Адресс: {{ sotrudnik.address }}</p>
-        <p class="text-dark">Образование: {{ sotrudnik.education }}</p>
-        <p class="text-dark">Аттестация: {{ sotrudnik.attestat_form }}</p>
+    {% for sotrudnik in all_sotrudnik %}
+        <div class="card d-flex bg-light flex-column mt-3 align-self-center" style="width: 20%">
+        <div class="d-flex flex-column">
+            <p class="text-dark">Фамилия: {{ sotrudnik.name_f }}</p>
+            <p class="text-dark">Имя: {{ sotrudnik.name_i }}</p>
+            <p class="text-dark">Отчество: {{ sotrudnik.name_o }}</p>
+            <p class="text-dark">Дата рождения: {{ sotrudnik.birth_date | date:'d.m.Y' }}</p>
+            <p class="text-dark">Адресс: {{ sotrudnik.address }}</p>
+            <p class="text-dark">Образование: {{ sotrudnik.education }}</p>
+            <p class="text-dark">Аттестация: {{ sotrudnik.attestat_form }}</p>
 
-    </div>
-{% endfor %}
+        </div>
+    {% endfor %}
     </div>
 
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
+</div>
 </body>
 </html>

@@ -1,10 +1,6 @@
 from django.shortcuts import render
 from .models import Sotrudnik
-from .forms import Sotrudnik, SearchSotrudnik, PostSotrudnik
-from django.shortcuts import redirect
-from django.views.generic import ListView
-
-from django.http import HttpResponseNotFound
+from .forms import Sotrudnik
 
 
 def sotrudnik_list(request):
