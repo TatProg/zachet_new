@@ -1,8 +1,34 @@
-<h1>
-    example desc
-</h1>
-<form method="POST" class="post-form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Сохранить</button>
-</form>
+{% load static %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sotrudnik page</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,700" rel="stylesheet">
+</head>
+<body>
+<div class="d-flex flex-column">
+    {{% for sotrudnik in all_sotrudnik %}
+    <div class="card d-flex bg-light flex-column mt-3 align-self-center" style="width: 20%">
+    <div class="d-flex flex-column">
+        <p class="text-dark">Фамилия: {{ sotrudnik.name_f }}</p>
+        <p class="text-dark">Имя: {{ sotrudnik.name_i }}</p>
+        <p class="text-dark">Отчество: {{ sotrudnik.name_o }}</p>
+        <p class="text-dark">Дата рождения: {{ sotrudnik.birth_date | date:'d.m.Y' }}</p>
+        <p class="text-dark">Адресс: {{ sotrudnik.address }}</p>
+        <p class="text-dark">Образование: {{ sotrudnik.education }}</p>
+        <p class="text-dark">Аттестация: {{ sotrudnik.attestat_form }}</p>
+
+    </div>
+{% endfor %}
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

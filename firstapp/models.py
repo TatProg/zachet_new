@@ -8,7 +8,7 @@ class Sotrudnik(models.Model):
     name_o = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
     # birth_date = models.CharField(max_length=200)
-    birth_date = models.DateField
+    birth_date = models.DateField()
     education = models.CharField(max_length=200)
     attestat_form = models.CharField(max_length=200)
 
